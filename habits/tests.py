@@ -282,44 +282,6 @@ class HabitTestCase(APITestCase):
         data = response.json()
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(data["results"]), 2)
-        # self.assertEqual(
-        #     data,
-        #     {
-        #         "count": 2,
-        #         "next": None,
-        #         "previous": None,
-        #         "results": [
-        #             {
-        #                 "id": self.good_habit1.pk,
-        #                 "place": self.good_habit1.place,
-        #                 "start_at": self.good_habit1.start_at,
-        #                 "action": self.good_habit1.action,
-        #                 "periodicity": 1,
-        #                 "is_pleasure": False,
-        #                 "reward": None,
-        #                 "runtime": self.good_habit1.runtime,
-        #                 "is_public": False,
-        #                 "execute_at": timezone.now().date(),
-        #                 "user": self.user1.pk,
-        #                 "related_habit": None
-        #             },
-        #             {
-        #                 "id": self.pleasant_habit1.pk,
-        #                 "place": self.pleasant_habit1.place,
-        #                 "start_at": self.pleasant_habit1.start_at,
-        #                 "action": self.pleasant_habit1.action,
-        #                 "periodicity": 1,
-        #                 "is_pleasure": True,
-        #                 "reward": None,
-        #                 "runtime": self.pleasant_habit1.runtime,
-        #                 "is_public": True,
-        #                 "execute_at": timezone.now().date(),
-        #                 "user": self.user1.pk,
-        #                 "related_habit": None
-        #             }
-        #             ]
-        #     }
-        # )
 
     def test_public_habit_list(self):
         """
